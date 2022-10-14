@@ -1,4 +1,4 @@
-package com.example.jee_firstapp;
+package com.app.jee_firstapp.servlet;
 
 import java.io.*;
 
