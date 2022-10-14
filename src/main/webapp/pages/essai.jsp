@@ -16,7 +16,7 @@
         Essai
     </h1>
     <p>
-        Bonjour ${ (!empty name ? name : nom) }
+        Bonjour ${ author.firstName } ${ author.lastname}
     </p>
     <p>
         <%

@@ -1,5 +1,6 @@
 package com.app.jee_firstapp.servlet;
 
+import com.app.jee_firstapp.beans.Author;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -14,11 +15,11 @@ public class EssaiServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String name = request.getParameter("name");
-        String nom = "mon Créateur";
-        request.setAttribute("nom", nom);
-        request.setAttribute("name", name);
-        request.setAttribute("heure", "jour");
+        Author author= new Author();
+        author.setLastname("Youssef");
+        author.setFirstName("Nour-eddine");
+        author.setActif(true);
+        request.setAttribute("author", author);
         this.getServletContext().getRequestDispatcher("/pages/essai.jsp").forward(request, response);
     }
 
