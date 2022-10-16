@@ -7,7 +7,7 @@
 <body>
     <%@ include file="_menu.jsp"%>
     <h1>
-        <%= "Hello World!" %>
+        <c:out value="Hello world!" />
     </h1>
     <br />
 </body>
