@@ -12,16 +12,14 @@
 </head>
 <body>
     <%@ include file="/_menu.jsp"%>
-    <h1>
-        Essai
-    </h1>
-    <p>
-        Bonjour <c:out value="${ author.firstName } ${ author.lastname}" />
-    </p>
-    <p>
-        <c:forEach var="i" begin="1" end="10">
-            <p>Création de la ligne numéro <c:out value="${ i }" /></p>
-        </c:forEach>
-    </p>
+    <h1>Bonjour!</h1>
+    <c:if test="${ !empty nom }"><p><c:out value="Vous vous appelez ${ nom }" /></p></c:if>
+
+    <form method="post" action="bonjour">
+        <label for="nom">Nom : </label>
+        <input type="text" name="nom" id="nom" />
+
+        <input type="submit" />
+    </form>
 </body>
 </html>
