@@ -13,12 +13,14 @@
 <body>
     <%@ include file="/_menu.jsp"%>
     <h1>Bonjour!</h1>
-    <c:if test="${ !empty nom }"><p><c:out value="Vous vous appelez ${ nom }" /></p></c:if>
-
+    <c:if test="${ !empty sessionScope.firstname && !empty sessionScope.name }">
+        <p>Vous êtes ${ sessionScope.firstname } ${ sessionScope.name } !</p>
+    </c:if>
     <form method="post" action="bonjour">
-        <label for="nom">Nom : </label>
-        <input type="text" name="nom" id="nom" />
-
+        <label for="name">Nom : </label>
+        <input type="text" name="name" id="name" />
+        <label for="firstname">Prénom : </label>
+        <input type="text" name="firstname" id="firstname" />
         <input type="submit" />
     </form>
 </body>

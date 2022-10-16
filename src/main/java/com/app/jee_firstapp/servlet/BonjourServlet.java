@@ -5,14 +5,15 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
 @WebServlet("/bonjour")
-public class Bonjour extends HttpServlet {
+public class BonjourServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    public Bonjour() {
+    public BonjourServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -21,10 +22,14 @@ public class Bonjour extends HttpServlet {
         this.getServletContext().getRequestDispatcher("/pages/bonjour.jsp").forward(request, response);
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String nom = request.getParameter("nom");
+    public void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
+        String name = request.getParameter("name");
+        String firstname = request.getParameter("firstname");
 
-        request.setAttribute("nom", nom);
+        HttpSession session = request.getSession();
+
+        session.setAttribute("name", name);
+        session.setAttribute("firstname", firstname);
 
         this.getServletContext().getRequestDispatcher("/pages/bonjour.jsp").forward(request, response);
     }
