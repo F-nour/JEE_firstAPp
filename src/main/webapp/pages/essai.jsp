@@ -18,8 +18,8 @@
     <p>
         Bonjour <c:out value="${ author.firstName } ${ author.lastname}" />
     </p>
-    <c:forEach var="i" begin="1" end="10" step="1">
-        <p>Nouvelle ligne numéro <c:out value="${ i }" />.</p>
+    <c:forEach var="i" begin="1" end="10">
+        <p>Nouvelle ligne numéro <c:out value="${ i }"</p>
     </c:forEach>
 </body>
 </html>
