@@ -16,7 +16,7 @@
         Essai
     </h1>
     <p>
-        Bonjour ${ author.firstName } ${ author.lastname}
+        Bonjour <c:out value="${ author.firstName } ${ author.lastname}" />
     </p>
     <p>
         <%
